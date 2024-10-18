@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **name_of_issuer** | **str** | The name of the issuer. | [optional] 
 **title_of_class** | **str** | The title of the class of securities. | [optional] 
 **cusip** | **str** | The CUSIP number of the securities. | [optional] 
+**ticker** | **str** | The ticker of the securities. | [optional] 
 **value** | **int** | The value of the securities. | [optional] 
 **ssh_prnamt** | **int** | The number of shares or principal amount. | [optional] 
 **ssh_prnamt_type** | **str** | The type of shares or principal amount. | [optional] 

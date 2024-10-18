@@ -32,6 +32,7 @@ class ApiV1FormEntry(BaseModel):
     name_of_issuer: Optional[StrictStr] = Field(default=None, description="The name of the issuer.")
     title_of_class: Optional[StrictStr] = Field(default=None, description="The title of the class of securities.")
     cusip: Optional[StrictStr] = Field(default=None, description="The CUSIP number of the securities.")
+    ticker: Optional[StrictStr] = Field(default=None, description="The ticker of the securities.")
     value: Optional[StrictInt] = Field(default=None, description="The value of the securities.")
     ssh_prnamt: Optional[StrictInt] = Field(default=None, description="The number of shares or principal amount.")
     ssh_prnamt_type: Optional[StrictStr] = Field(default=None, description="The type of shares or principal amount.")
@@ -39,7 +40,7 @@ class ApiV1FormEntry(BaseModel):
     voting_authority_sole: Optional[StrictInt] = Field(default=None, description="The sole voting authority.")
     voting_authority_shared: Optional[StrictInt] = Field(default=None, description="The shared voting authority.")
     voting_authority_none: Optional[StrictInt] = Field(default=None, description="The no voting authority.")
-    __properties: ClassVar[List[str]] = ["accession_number", "cik", "name_of_issuer", "title_of_class", "cusip", "value", "ssh_prnamt", "ssh_prnamt_type", "investment_discretion", "voting_authority_sole", "voting_authority_shared", "voting_authority_none"]
+    __properties: ClassVar[List[str]] = ["accession_number", "cik", "name_of_issuer", "title_of_class", "cusip", "ticker", "value", "ssh_prnamt", "ssh_prnamt_type", "investment_discretion", "voting_authority_sole", "voting_authority_shared", "voting_authority_none"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +133,7 @@ class ApiV1FormEntry(BaseModel):
             "name_of_issuer": obj.get("name_of_issuer"),
             "title_of_class": obj.get("title_of_class"),
             "cusip": obj.get("cusip"),
+            "ticker": obj.get("ticker"),
             "value": obj.get("value"),
             "ssh_prnamt": obj.get("ssh_prnamt"),
             "ssh_prnamt_type": obj.get("ssh_prnamt_type"),
