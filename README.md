@@ -1,8 +1,25 @@
 # forms13f
 API for SEC form filings such as 13F.
 
-The package is a wrapper around the [forms13f.com](https://forms13f.com) API.
+## Forms13f.com Python SDK
 
+This API provides access to indexed data from the EDGAR database, specifically focusing on Form 13F filings.
+
+Form 13F is a quarterly report filed by institutional investment managers with over $100 million in assets under management. These filings are required by the U.S. Securities and Exchange Commission (SEC) and provide a detailed list of all equity securities under the manager's control. Each filer is identified by a Central Index Key (CIK), and each form is identified by a combination of the CIK and an accession number. Forms may also have amendments, which are filed to correct or update information.
+
+This project offers an API to access this data using either REST or a Python SDK. You can find the REST API on [GitHub](https://forms13f.github.io/api-docs/). Additionally, there are examples available in Jupyter Notebooks, which can also be found on [GitHub](https://github.com/forms13f/python-sdk). For more details, visit the main project page at [forms13f.com](https://forms13f.com).
+
+### Resources
+
+- [Main Project Page](https://forms13f.com)
+- [REST API](https://forms13f.github.io/api-docs/)
+- [Jupyter Notebooks](https://github.com/forms13f/python-sdk)
+- [Latest Forms Filed](https://forms13f.com/pages/latest.html)
+- [Most Popular Funds](https://forms13f.com/pages/popular.html)
+
+### Contact
+
+If you have any questions or need support, please contact us at [forms13f@gmail.com](mailto:forms13f@gmail.com).
 - API version: 1.0.0
 - Package version: 1.0.0
 
