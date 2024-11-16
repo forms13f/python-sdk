@@ -40,7 +40,8 @@ class ApiV1FormEntry(BaseModel):
     voting_authority_sole: Optional[StrictInt] = Field(default=None, description="The sole voting authority.")
     voting_authority_shared: Optional[StrictInt] = Field(default=None, description="The shared voting authority.")
     voting_authority_none: Optional[StrictInt] = Field(default=None, description="The no voting authority.")
-    __properties: ClassVar[List[str]] = ["accession_number", "cik", "name_of_issuer", "title_of_class", "cusip", "ticker", "value", "ssh_prnamt", "ssh_prnamt_type", "investment_discretion", "voting_authority_sole", "voting_authority_shared", "voting_authority_none"]
+    put_call: Optional[StrictStr] = Field(default=None, description="Indicates if this is a derivative position.")
+    __properties: ClassVar[List[str]] = ["accession_number", "cik", "name_of_issuer", "title_of_class", "cusip", "ticker", "value", "ssh_prnamt", "ssh_prnamt_type", "investment_discretion", "voting_authority_sole", "voting_authority_shared", "voting_authority_none", "put_call"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +117,11 @@ class ApiV1FormEntry(BaseModel):
         if self.voting_authority_none is None and "voting_authority_none" in self.model_fields_set:
             _dict['voting_authority_none'] = None
 
+        # set to None if put_call (nullable) is None
+        # and model_fields_set contains the field
+        if self.put_call is None and "put_call" in self.model_fields_set:
+            _dict['put_call'] = None
+
         return _dict
 
     @classmethod
@@ -140,7 +146,8 @@ class ApiV1FormEntry(BaseModel):
             "investment_discretion": obj.get("investment_discretion"),
             "voting_authority_sole": obj.get("voting_authority_sole"),
             "voting_authority_shared": obj.get("voting_authority_shared"),
-            "voting_authority_none": obj.get("voting_authority_none")
+            "voting_authority_none": obj.get("voting_authority_none"),
+            "put_call": obj.get("put_call")
         })
         return _obj
 

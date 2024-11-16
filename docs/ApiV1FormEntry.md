@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **voting_authority_sole** | **int** | The sole voting authority. | [optional] 
 **voting_authority_shared** | **int** | The shared voting authority. | [optional] 
 **voting_authority_none** | **int** | The no voting authority. | [optional] 
+**put_call** | **str** | Indicates if this is a derivative position. | [optional] 
 
 ## Example
 
